@@ -47,14 +47,13 @@ app.get('/abracadabra/juegos/:usuario', (req, res) => {
     res.sendFile (__dirname + '/index.html');
 });
 
-
 app.get('/abracadabra/conejo/:n', (req, res) => {
-    const numero  = Math.floor(Math.random() * 4 + 1);
-    const n = + req.params.n;
-    if (n == numero ){
-        res.sendFile(__dirname + './assets/img/conejito.jpg');
+    const numero = Math.floor(Math.random() * 4) + 1; // Generador de numeros entre  1 y 4
+    const n = +req.params.n; 
+    if (n === numero) {
+        res.sendFile(__dirname + '/assets/img/conejito.jpg');
     } else {
-        res.sendFile((__dirname + './assets/img/voldemort.jpg'));
+        res.sendFile(__dirname + '/assets/img/voldemort.jpg');
     } 
 });
 
